@@ -1,0 +1,86 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    }
+    .gallery{
+        perspective: 1000px;
+    }
+
+.gallery-container{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite linear;
+}
+
+.gallery-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.gallery-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery-image:nth-child(1) {transform: rotateY(0deg);}
+.gallery-image:nth-child(2) {transform: rotateY(90deg);}
+.gallery-image:nth-child(3) {transform: rotateY(180deg);}
+.gallery-image:nth-child(4) {transform: rotateY(-90deg);}
+
+
+
+
+.Thumbnail-gallery {
+    display: flex;
+    margin-top: 100px;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Thumbnail {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3;
+    width: 100px;
+    height: 100px;
+}
+
+.Thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Thumbnail:hover {
+    transform: scale(1.3);
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    font-family: Constantia, "Lucida Brigth", "DejaVu Serif", Georgia, "serif";
+    font-size: 10px;
+    padding: 1px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.Thumbnail:hover.description {
+    opacity: 0;
+}
